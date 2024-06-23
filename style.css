@@ -4,34 +4,38 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f3f4f6;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 .calculator {
-    border: 1px solid #ccc;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 400px;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    box-shadow: 2px 2px 10px #333;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .display {
+    grid-column: span 4;
     background-color: #222;
     color: white;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     padding: 20px;
-    font-size: 2em;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    font-size: 2.5em;
 }
 
 button {
-    border: 1px solid #ccc;
-    padding: 20px;
-    font-size: 1.5em;
     cursor: pointer;
+    font-size: 2em;
+    border: 1px solid #ccc;
+    outline: none;
     background-color: white;
     transition: background-color 0.3s ease;
 }
@@ -42,4 +46,17 @@ button:hover {
 
 button:active {
     background-color: #ddd;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+button:nth-child(4), button:nth-child(8), button:nth-child(12), button:nth-child(16) {
+    background-color: #f09a36;
+    color: white;
+}
+
+button:nth-child(4):hover, button:nth-child(8):hover, button:nth-child(12):hover, button:nth-child(16):hover {
+    background-color: #e5891d;
 }

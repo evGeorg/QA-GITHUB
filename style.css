@@ -60,3 +60,68 @@ button:nth-child(4), button:nth-child(8), button:nth-child(12), button:nth-child
 button:nth-child(4):hover, button:nth-child(8):hover, button:nth-child(12):hover, button:nth-child(16):hover {
     background-color: #e5891d;
 }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.calculator {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 400px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    box-shadow: 2px 2px 10px #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.display {
+    grid-column: span 4;
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    font-size: 2.5em;
+}
+
+button {
+    cursor: pointer;
+    font-size: 2em;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
+
+button:active {
+    background-color: #ddd;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+button:nth-child(4), button:nth-child(8), button:nth-child(12), button:nth-child(16) {
+    background-color: #f09a36;
+    color: white;
+}
+
+button:nth-child(4):hover, button:nth-child(8):hover, button:nth-child(12):hover, button:nth-child(16):hover {
+    background-color: #e5891d;
+}
